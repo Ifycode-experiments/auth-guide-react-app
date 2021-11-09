@@ -1,5 +1,7 @@
 
-# Create React App + LESS config
+# React (firebase) auth guide app
+
+<!--
 
 Create react app starter files, with LESS configured. See sections below for how to run and use the app.
 
@@ -40,3 +42,5 @@ The LESS code you write in the `less` folder is transpiled to CSS and sent into 
 ## Create react app documentation
 
 Visit the create react app [documentation](https://create-react-app.dev/docs/getting-started/) for how to interact with create react app.
+
+-->

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Auth Guide App",
+  "name": "React (firebase) auth guide app",
   "icons": [
     {
       "src": "favicon.ico",
