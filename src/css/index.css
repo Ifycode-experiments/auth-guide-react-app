@@ -9,3 +9,10 @@ body {
   color: #fefefe;
   background: #3a3a3a;
 }
+.icon {
+  width: 100px;
+  margin: 0 auto 40px auto;
+}
+.icon img {
+  width: 100%;
+}

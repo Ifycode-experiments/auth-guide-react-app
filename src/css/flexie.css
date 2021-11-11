@@ -1,8 +1,6 @@
 .contain {
   width: 90%;
   margin: 0 auto;
-  border: 1px solid #fefefe;
-  /* remove when done */
 }
 .f-sb-ai-center {
   display: flex;

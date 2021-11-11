@@ -1,15 +1,15 @@
-import logo from '../img/logo.svg';
+import logo from '../images/logo/auth-logo-colored-2.svg';
 import '../css/flexie.css';
 import '../css/header.css';
 
 const Header = () => (
-    <header className="">
+    <header>
         <div className="contain f-sb-ai-center" >
             <a className="brand-logo" href="./">
-                <img src={logo} alt="" />
+                <img src={logo} alt="auth guide app logo" />
             </a>
             <nav>
-                <ul className="">
+                <ul>
                     <li>link 1</li>
                     <li>link 2</li>
                     <li>link 3</li>
