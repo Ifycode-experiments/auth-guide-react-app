@@ -1,46 +1,9 @@
 
 # React (firebase) auth guide app
 
-<!--
+Firebase authentication guide app with create-react-app. The guide helps to understand how the app works itself. More information on the user roles and what not-logged in users, logged in users and admins will be able to do with this app.
 
-Create react app starter files, with LESS configured. See sections below for how to run and use the app.
 
-**Note:** You can checkout the [react + webpack5 starter kit](https://github.com/Ifycode/react-webpack5-starter-kit) instead, if you want something other than create react app.
+## About compiling less to css
 
-## Install dependencies
-
-Install dependencies with the yarn command below if you are using yarn, or install dependencies with the npm command below if you are using npm.
-
-````
-yarn install
-````
-
-OR
-
-````
-npm install
-````
-
-## Run the application
-
-Use the command yarn command below to run the application at localhost:3000 if you are using yarn, use the npm command if you are using npm.
-
-````
-yarn run dev
-````
-
-or
-
-````
-npm run dev
-````
-
-## Import generated css
-
-The LESS code you write in the `less` folder is transpiled to CSS and sent into the `css` folder. Import the generated CSS files in your js files (not the LESS files).
-
-## Create react app documentation
-
-Visit the create react app [documentation](https://create-react-app.dev/docs/getting-started/) for how to interact with create react app.
-
--->
+`npm run dev` script takes care of watching changes in the less folder and run the app. `FAST_REFRESH=false` is added to the start script to fix compile issues with create react app. Incase this doesn't work for you, see [development server of create-react-app does not auto refresh](https://stackoverflow.com/questions/43274925/development-server-of-create-react-app-does-not-auto-refresh) stackoverflow question or [hot Reload stopped working with React "^17.0.1"](https://github.com/facebook/create-react-app/issues/9904) github issue.

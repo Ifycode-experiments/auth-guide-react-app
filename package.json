@@ -12,8 +12,10 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "dev": "npm-run-all --parallel less:watch start",
-    "less:watch": "less-watch-compiler --config less-watcher.config.json",
+    "dev": "npm-run-all --parallel watch:less start:edited",
+    "watch:less": "watch 'npm run compile:once' src/less",
+    "compile:once": "rimraf src/css && less-watch-compiler --config less-watcher.config.json",
+    "start:edited": "FAST_REFRESH=false react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -40,6 +42,8 @@
   "devDependencies": {
     "less": "^4.1.2",
     "less-watch-compiler": "^1.16.3",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "watch": "^1.0.2"
   }
 }
