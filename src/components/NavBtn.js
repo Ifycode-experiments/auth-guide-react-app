@@ -1,7 +1,16 @@
+import React, { Component } from 'react';
 import '../css/nav/show-on-ss.css';
 
-const NavBtn = () => (
-    <button className="show-on-ss">Menu</button>
-);
+class NavBtn extends Component {
+    headerButton = React.createRef();
+    toggleNav = e => {
+        console.log(this.headerButton);
+    }
+    render() {
+        return (
+            <button ref={this.headerButton} onClick={this.toggleNav} className="show-on-ss">Menu</button>
+        )
+    }
+};
 
 export default NavBtn;
