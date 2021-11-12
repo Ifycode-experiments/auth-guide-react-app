@@ -1,0 +1,12 @@
+.g {
+  display: grid;
+  grid-gap: 40px 0;
+  margin: 40px 0;
+  /* note */
+}
+@media screen and (min-width: 920px) {
+  .g-sb-ls {
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+}

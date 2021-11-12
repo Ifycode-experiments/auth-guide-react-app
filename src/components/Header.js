@@ -1,5 +1,4 @@
 import logo from '../images/logo/auth-logo-colored-2.svg';
-import '../css/flexie.css';
 import '../css/header.css';
 
 const Header = () => (

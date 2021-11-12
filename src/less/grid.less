@@ -1,0 +1,15 @@
+
+.g {
+    display: grid;
+    grid-gap: 40px 0;
+    margin: 40px 0; /* note */
+}
+
+//.g-sb means grid, space between, large screen
+
+.g-sb-ls {
+    @media screen and (min-width: 920px) {
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
+    }
+}
