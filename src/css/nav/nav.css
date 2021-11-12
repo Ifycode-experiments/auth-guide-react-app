@@ -1,10 +1,3 @@
-header {
-  padding: 10px 0;
-}
-header .brand-logo {
-  width: 200px;
-  display: block;
-}
 .nav {
   position: fixed;
   right: 0;
@@ -45,21 +38,5 @@ header .brand-logo {
     flex-direction: row;
     background: transparent;
     max-width: unset;
-  }
-}
-/*=====================
-Apply both nav-hide and 
-nav-show on nav element.
-Use javascript to add or
-remove only nav-hide, so
-that the effect will only
-be on smaller screens
-=======================*/
-.nav-hide {
-  display: none;
-}
-@media screen and (min-width: 850px) {
-  .nav-hide {
-    display: block;
   }
 }

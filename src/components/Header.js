@@ -1,3 +1,4 @@
+import NavBtn from './NavBtn';
 import logo from '../images/logo/auth-logo-colored-2.svg';
 import '../css/header.css';
 
@@ -7,8 +8,10 @@ const Header = () => (
             <a className="brand-logo" href="./">
                 <img src={logo} alt="auth guide app logo" />
             </a>
-            <nav>
-                <ul>
+            <NavBtn />
+            <nav className="nav nav-hide nav-show">
+                <NavBtn />
+                <ul className="menu-container">
                     <li>link 1</li>
                     <li>link 2</li>
                     <li>link 3</li>
