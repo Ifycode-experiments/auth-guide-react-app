@@ -1,0 +1,41 @@
+.btn {
+  background: #3e3e3e;
+  color: white;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  transition: border 0.2s ease-in;
+}
+.btn:hover,
+.btn:focus {
+  border: 2px solid var(--theme-light);
+  box-shadow: 1px 1px 10px var(--shadow);
+  outline: none;
+}
+/*========================================
+ specific .btn style for specific sections
+ =======================================*/
+.nav .btn {
+  width: max-content;
+  margin: 10px 10px 10px auto;
+}
+.modal .btn {
+  margin-top: 8px;
+}
+/*======================================*/
+@media screen and (min-width: 550px) {
+  .btn {
+    font-size: 1.1em;
+  }
+  /*========================================
+    specific .btn style for specific sections
+    =======================================*/
+  .modal .btn {
+    margin-top: 10px;
+  }
+  /*======================================*/
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from './components/Router';
 import './css/index.css';
+import './css/button.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
