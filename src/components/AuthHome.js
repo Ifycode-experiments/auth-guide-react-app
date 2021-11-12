@@ -6,7 +6,7 @@ import docIcon from '../images/icon/doc.svg';
 import authusersIcon from '../images/icon/auth-users.svg';
 import adminIcon from '../images/icon/admin.svg';
 
-class LoggedOut extends Component {
+class AuthHome extends Component {
   render() {
     return (
       <Fragment>
@@ -48,4 +48,4 @@ class LoggedOut extends Component {
   }
 }
 
-export default LoggedOut;
+export default AuthHome;

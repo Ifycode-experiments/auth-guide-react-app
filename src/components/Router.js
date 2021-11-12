@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LoggedOut from './LoggedOut';
+import AuthHome from './AuthHome';
 import App from './App';
 import NotFound from './NotFound';
 
 const Router = () => (
     <BrowserRouter>
         <Routes>
-            <Route exact path="/" element={ <LoggedOut /> } />
+            <Route exact path="/" element={ <AuthHome /> } />
             <Route path="/guide" element={ <App /> } />
             <Route path="*" element={ <NotFound /> } />
         </Routes>
