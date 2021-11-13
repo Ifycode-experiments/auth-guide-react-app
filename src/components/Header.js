@@ -1,5 +1,7 @@
 import NavBtn from './NavBtn';
 import '../css/header.css';
+import linkDetails from '../navlinks';
+import NavLink from './NavLink';
 
 const Header = () => (
     <header>
@@ -11,9 +13,12 @@ const Header = () => (
             <nav className="nav nav-hide nav-show">
                 <NavBtn />
                 <ul className="menu-container">
-                    <li>link 1</li>
-                    <li>link 2</li>
-                    <li>link 3</li>
+                    {Object.keys(linkDetails).map(linkKey => 
+                        <NavLink 
+                            key={linkKey} 
+                            details={linkDetails[linkKey]}
+                        /> 
+                    )}
                 </ul>
             </nav>
         </div>
