@@ -1,12 +1,11 @@
 import NavBtn from './NavBtn';
-import logo from '../images/logo/auth-logo-colored-2.svg';
 import '../css/header.css';
 
 const Header = () => (
     <header>
         <div className="contain f-sb-ai-center" >
             <a className="brand-logo" href="./">
-                <img src={logo} alt="auth guide app logo" />
+                <img src='./images/logo/auth-logo-colored-2.svg' alt="auth guide app logo" />
             </a>
             <NavBtn />
             <nav className="nav nav-hide nav-show">
