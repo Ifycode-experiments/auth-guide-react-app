@@ -10,7 +10,7 @@ class Header extends Component {
         visible: true
     };
 
-    toggleNav = e => {
+    toggleNav = () => {
         //For hiding or showing nav element
         const currentState = this.state.hidden;
         this.setState({ hidden: !currentState });

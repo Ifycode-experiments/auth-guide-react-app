@@ -30,21 +30,25 @@ article.intro p {
   font-family: "Roboto", sans-serif;
 }
 .icon {
-  width: 100px;
+  width: 80px;
   margin: 0 auto;
   margin-bottom: 10px;
 }
 .icon img {
   width: 100%;
-  max-height: 100px;
+  max-height: 80px;
 }
-.doc {
+.doc,
+.tut {
   background: #2e2e2e;
   color: rgba(128, 128, 128, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom: 40px;
+}
+.tut {
+  margin-top: 40px;
 }
