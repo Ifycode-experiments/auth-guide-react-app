@@ -1,6 +1,6 @@
 import NavBtn from './NavBtn';
 import '../css/header.css';
-import linkDetails from '../navlinks';
+import linkDetails from '../helper/navlinks';
 import NavLink from './NavLink';
 import { Component } from 'react';
 

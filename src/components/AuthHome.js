@@ -1,8 +1,8 @@
 import { Component, Fragment } from 'react';
 import Header from './Header';
-import GuideIntro from './GuideIntro';
+import DocIntro from './DocIntro';
 import Documentation from './Documentation';
-import guideintro from '../guideintro';
+import docintro from '../helper/docintro';
 import '../css/flexie.css';
 import '../css/grid.css';
 
@@ -13,10 +13,11 @@ class AuthHome extends Component {
         <Header />
         <section className="contain">
           <div className="g g-sb-ls">
-            { guideintro.map(intro => 
-              <GuideIntro 
+            { docintro.map(intro => 
+              <DocIntro 
                 key={intro.title.toLowerCase()}
-                details={intro} />
+                details={intro} 
+              />
             )}
           </div>
         </section>

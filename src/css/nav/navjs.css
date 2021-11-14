@@ -1,5 +1,3 @@
-@import '../var.less';
-
 /*=====================
 Apply both nav-hide and 
 nav-show on nav element.
@@ -8,11 +6,11 @@ remove only nav-hide, so
 that the effect will only
 be on smaller screens
 =======================*/
-
 .nav-hide {
-    display: none;
-  
-    @media @large-breakpoint {
-      display: block;
-    }
+  display: none;
+}
+@media screen and (min-width: 920px) {
+  .nav-hide {
+    display: block;
+  }
 }

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-const GuideIntro = (props) => (
+const DocIntro = (props) => (
    <Fragment>
        <article className="intro">
             <div className="icon">
@@ -14,4 +14,4 @@ const GuideIntro = (props) => (
    </Fragment>
 );
 
-export default GuideIntro;
+export default DocIntro;
