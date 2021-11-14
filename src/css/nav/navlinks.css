@@ -8,6 +8,7 @@
   font-size: 1em;
   font-weight: bold;
   outline: none;
+  width: 100%;
   font-family: "Nunito Sans", sans-serif;
   padding: 30px 10px;
   margin: 1px 0;
@@ -22,8 +23,8 @@
   border-right: 1px solid #f4d47c;
   border-left: 1px solid #f4d47c;
 }
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 920px) {
   .nav .a {
-    width: 100%;
+    width: unset;
   }
 }
