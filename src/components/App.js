@@ -1,6 +1,6 @@
 import { Component, Fragment } from 'react';
 import Header from './Header';
-import Documentation from './Documentation';
+import Tutorial from './Tutorial';
 import '../css/flexie.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <Documentation />
+        <Tutorial />
       </Fragment>
     );
   }
