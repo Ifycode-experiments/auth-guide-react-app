@@ -32,11 +32,11 @@ class Header extends Component {
                         visible={this.state.visible} 
                     />
                     <nav className={`nav nav-show ${this.state.hidden ? 'nav-hide' : '' }`}>
-                        <NavBtn 
-                            toggleNav={this.toggleNav} 
-                            visible={!this.state.visible}
-                        />
                         <ul className="menu-container">
+                            <NavBtn 
+                                toggleNav={this.toggleNav} 
+                                visible={!this.state.visible}
+                            />
                             {Object.keys(linkDetails).map(linkKey => 
                                 <NavLink 
                                     key={linkKey} 

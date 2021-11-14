@@ -1,6 +1,3 @@
-header {
-  padding: 10px 0;
-}
 header .brand-logo {
   width: 200px;
   display: block;
@@ -10,12 +7,12 @@ header .brand-logo {
   right: 0;
   top: 0;
   z-index: 9999;
-  background: var(--fixed-container-bg);
+  background: rgba(62, 62, 62, 0.95);
   width: 100vw;
   height: 100vh;
   /*overflow-y: scroll;*/
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 920px) {
   .nav {
     position: static;
     right: unset;
@@ -29,22 +26,24 @@ header .brand-logo {
 .nav .menu-container {
   display: flex;
   flex-direction: column;
-  background: var(--white);
+  background: #3e3e3e;
   height: inherit;
   max-width: 250px;
   margin: 0 0 0 auto;
   overflow-y: scroll;
+  border-left: 1px solid rgba(128, 128, 128, 0.4);
 }
 @media screen and (min-width: 450px) {
   .nav .menu-container {
     max-width: 280px;
   }
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 920px) {
   .nav .menu-container {
     flex-direction: row;
     background: transparent;
     max-width: unset;
+    border-left: 0;
   }
 }
 /*=====================
@@ -58,8 +57,37 @@ be on smaller screens
 .nav-hide {
   display: none;
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 920px) {
   .nav-hide {
     display: block;
+  }
+}
+.nav .a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  background: transparent;
+  color: #d4d4d4;
+  font-size: 1em;
+  font-weight: bold;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 30px 10px;
+  margin: 1px 0;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: background-color 0.2s ease-in;
+}
+.nav .a:focus,
+.nav .a:hover {
+  background: #2e2e2e;
+  color: #f4d47c;
+  border-right: 1px solid #f4d47c;
+  border-left: 1px solid #f4d47c;
+}
+@media screen and (min-width: 550px) {
+  .nav .a {
+    width: 100%;
   }
 }

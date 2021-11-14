@@ -3,12 +3,12 @@
     right: 0;
     top: 0;
     z-index: 9999;
-    background: var(--fixed-container-bg);
+    background: rgba(62, 62, 62, 0.95);
     width: 100vw;
     height: 100vh;
     /*overflow-y: scroll;*/
 
-    @media screen and (min-width: 850px) {
+    @media screen and (min-width: 920px) {
         position: static;
         right: unset;
         top: unset;
@@ -21,20 +21,22 @@
     .menu-container {
         display: flex;
         flex-direction: column;
-        background: var(--white);
+        background: #3e3e3e;
         height: inherit;
         max-width: 250px;
         margin: 0 0 0 auto;
         overflow-y: scroll;
+        border-left: 1px solid rgba(128, 128, 128, 0.4); //modified
 
         @media screen and (min-width: 450px) {
             max-width: 280px;
         }
 
-        @media screen and (min-width: 850px) {
+        @media screen and (min-width: 920px) {
             flex-direction: row;
             background: transparent;
             max-width: unset;
+            border-left: 0; //modified
         }
     }
 }

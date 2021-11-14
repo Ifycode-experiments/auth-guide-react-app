@@ -1,6 +1,10 @@
 
 const NavLink = (props) => (
-    <li>{props.details.name}</li>
+    <li>
+        <button className="a">
+            {props.details.name}
+        </button>
+    </li>
 );
 
 export default NavLink;

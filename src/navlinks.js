@@ -1,12 +1,16 @@
 
 const links = {
+    documentation: {
+        name: 'Documentation',
+        alias: null
+    },
+    tutorial: {
+        name: 'Tutorial',
+        alias: null
+    },
     account: {
         name: 'Account',
         alias: 'modal-account'
-    },
-    settings: {
-        name: 'Settings',
-        alias: 'modal-settings'
     },
     logout: {
         name: 'Logout',

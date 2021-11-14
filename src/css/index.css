@@ -15,6 +15,9 @@ body {
   background: #3a3a3a;
   font-family: "Nunito Sans", sans-serif;
 }
+li {
+  list-style-type: none;
+}
 article.intro {
   color: #dedede;
 }
