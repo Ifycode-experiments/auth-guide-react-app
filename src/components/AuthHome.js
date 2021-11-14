@@ -1,6 +1,7 @@
 import { Component, Fragment } from 'react';
 import Header from './Header';
 import GuideIntro from './GuideIntro';
+import Documentation from './Documentation';
 import guideintro from '../guideintro';
 import '../css/flexie.css';
 import '../css/grid.css';
@@ -19,7 +20,7 @@ class AuthHome extends Component {
             )}
           </div>
         </section>
-        {/* The Doc section will be added here later on */}
+        <Documentation />
       </Fragment>
     );
   }

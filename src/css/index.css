@@ -38,3 +38,12 @@ article.intro p {
   width: 100%;
   max-height: 100px;
 }
+.doc {
+  background: #2e2e2e;
+  color: rgba(128, 128, 128, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-bottom: 40px;
+}
