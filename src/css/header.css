@@ -34,7 +34,7 @@ header .brand-logo {
 .nav .menu-container {
   display: flex;
   flex-direction: column;
-  background: #3e3e3e;
+  background: #3a3a3a;
   height: inherit;
   max-width: 250px;
   margin: 0 0 0 auto;

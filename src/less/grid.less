@@ -1,14 +1,16 @@
 
+@import './var.less';
+
 .g {
     display: grid;
-    grid-gap: 40px 0;
-    margin: 40px 0; /* note */
+    grid-gap: @tb-gap;
+    margin: @tb-gap; /* note */
 }
 
 //.g-sb means grid, space between, large screen
 
 .g-sb-ls {
-    @media screen and (min-width: 920px) {
+    @media @large-breakpoint {
         grid-template-columns: repeat(2, 48%);
         justify-content: space-between;
     }

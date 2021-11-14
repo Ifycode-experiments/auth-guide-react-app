@@ -1,4 +1,6 @@
 
+@import './var.less';
+
 @import (css) url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap');
 @import (css) url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
@@ -15,8 +17,8 @@ img {
 }
 
 body {
-    color: #fefefe;
-    background: #3a3a3a;
+    color: @white;
+    background: @theme;
     font-family: "Nunito Sans", sans-serif;
 }
 
@@ -25,11 +27,11 @@ li {
 }
 
 article.intro {
-    color: #dedede;
+    color: @white;
 
     h1 {
         padding: 2px 0;
-        border-bottom: 1px solid #dedede;
+        border-bottom: 1px solid @white;
         margin-bottom: 10px;
     }
 
@@ -50,11 +52,11 @@ article.intro {
 }
 
 .doc {
-    background: #2e2e2e;
+    background: @theme-dark;
     color: rgba(128, 128, 128, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
-    margin-bottom: 40px;
+    margin-bottom: @gap
 }

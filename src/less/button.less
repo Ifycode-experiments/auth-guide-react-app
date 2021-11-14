@@ -1,11 +1,12 @@
+@import './var.less';
 
 button {
     cursor: pointer;
 }
 
 .btn {
-    background: #2e2e2e;
-    color: #f4d47c;;
+    background: @theme-dark;
+    color: @yellow-bright;
     font-size: 1em;
     text-transform: uppercase;
     padding: 8px 16px;
@@ -20,8 +21,8 @@ button {
 
 .btn:hover,
 .btn:focus {
-    border-right: 1px solid #f4d47c;
-    border-left: 1px solid #f4d47c;
+    border-right: 1px solid @yellow-bright;
+    border-left: 1px solid @yellow-bright;
     //border-radius: 0 10px 0 10px;
     //box-shadow: 1px 1px 10px add-color-here;
 }
@@ -41,7 +42,7 @@ button {
 /*======================================*/
 
 
-@media screen and (min-width: 550px) { 
+@media @btn-small-breakpoint { 
     .btn {
         font-size: 1.1em;
     }

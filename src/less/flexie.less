@@ -1,13 +1,15 @@
 
+@import './var.less';
+
 .contain {
     width: 90%;
     margin: 0 auto;
 
-    @media screen and (min-width: 1220px) {
+    @media @contain-lg1-breakpoint {
         width: 85%;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media @contain-lg2-breakpoint {
         width: unset;
         max-width: 1350px;
     }

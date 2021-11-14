@@ -22,13 +22,13 @@
 
         &:focus, 
         &:hover {
-            background: #2e2e2e;
-            color: #f4d47c;
-            border-right: 1px solid #f4d47c;
-            border-left: 1px solid #f4d47c;
+            background: @theme-dark;
+            color: @yellow-bright;
+            border-right: 1px solid @yellow-bright;
+            border-left: 1px solid @yellow-bright;
         }
 
-        @media screen and (min-width: 920px) { 
+        @media @large-breakpoint { 
             width: unset; //modified
         }
     }
