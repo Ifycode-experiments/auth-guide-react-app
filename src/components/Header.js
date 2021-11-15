@@ -22,7 +22,7 @@ class Header extends Component {
     }
 
     openModal = () => {
-        console.log('Modal opened! ');
+        this.props.openModal();
     }
 
     logout = () => {
