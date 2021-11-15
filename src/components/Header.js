@@ -25,6 +25,10 @@ class Header extends Component {
         console.log('Modal opened! ');
     }
 
+    logout = () => {
+        console.log('Logged Out! ');
+    }
+
     render() {
         return (
             <header>
@@ -51,7 +55,7 @@ class Header extends Component {
                                 <NavLinkBtn
                                     key={linkKey} 
                                     details={linkDetails[linkKey]}
-                                    modal={this.openModal}
+                                    modal={linkKey === 'logout' ? this.logout : this.openModal}
                                 />
                             )}
                         </ul>
