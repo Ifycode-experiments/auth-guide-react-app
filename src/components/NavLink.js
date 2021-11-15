@@ -1,7 +1,7 @@
 
 const NavLink = (props) => (
     <li>
-        <a href="./" className="a">
+        <a href={`./${props.details.name.toLowerCase()}`} className="a">
             {props.details.name}
         </a>
     </li>

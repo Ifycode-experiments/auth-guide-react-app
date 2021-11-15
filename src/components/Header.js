@@ -21,6 +21,10 @@ class Header extends Component {
         this.setState({ visible: !currentVisibleState });
     }
 
+    openModal = () => {
+        console.log('Modal opened! ');
+    }
+
     render() {
         return (
             <header>
@@ -47,6 +51,7 @@ class Header extends Component {
                                 <NavLinkBtn
                                     key={linkKey} 
                                     details={linkDetails[linkKey]}
+                                    modal={this.openModal}
                                 />
                             )}
                         </ul>

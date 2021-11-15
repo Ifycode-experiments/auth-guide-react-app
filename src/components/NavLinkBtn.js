@@ -1,7 +1,7 @@
 
 const NavLinkBtn = (props) => (
     <li>
-        <button className="a">
+        <button onClick={props.modal} className="a">
             {props.details.name}
         </button>
     </li>
