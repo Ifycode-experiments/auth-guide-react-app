@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import NavBtn from './NavBtn';
 import NavLink from './NavLink';
+import NavLinkBtn from './NavLinkBtn';
 import linkDetails from '../helper/navlinks';
 import '../css/header.css';
 
@@ -37,11 +38,16 @@ class Header extends Component {
                                 toggleNav={this.toggleNav} 
                                 visible={!this.state.visible}
                             />
-                            {Object.keys(linkDetails).map(linkKey => 
+                            {Object.keys(linkDetails).map(linkKey =>
+                                linkKey === 'documentation' || linkKey === 'tutorial'  ? 
                                 <NavLink 
                                     key={linkKey} 
                                     details={linkDetails[linkKey]}
-                                /> 
+                                /> :
+                                <NavLinkBtn
+                                    key={linkKey} 
+                                    details={linkDetails[linkKey]}
+                                />
                             )}
                         </ul>
                     </nav>

@@ -1,9 +1,9 @@
 
 const NavLink = (props) => (
     <li>
-        <button className="a">
+        <a href="./" className="a">
             {props.details.name}
-        </button>
+        </a>
     </li>
 );
 
