@@ -1,8 +1,8 @@
-import NavBtn from './NavBtn';
-import '../css/header.css';
-import linkDetails from '../helper/navlinks';
-import NavLink from './NavLink';
 import { Component } from 'react';
+import NavBtn from './NavBtn';
+import NavLink from './NavLink';
+import linkDetails from '../helper/navlinks';
+import '../css/header.css';
 
 class Header extends Component {
     state = {

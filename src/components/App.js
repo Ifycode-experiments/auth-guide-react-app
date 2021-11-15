@@ -1,7 +1,6 @@
 import { Component, Fragment } from 'react';
 import Header from './Header';
 import Tutorial from './Tutorial';
-import '../css/flexie.css';
 
 class App extends Component {
   render() {

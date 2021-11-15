@@ -1,7 +1,7 @@
 
 const Documentation = () => (
-    <section className="contain doc">
-        <div>Documentation section</div>
+    <section className="contain">
+        <div className="doc">Documentation section</div>
     </section>
 );
 
