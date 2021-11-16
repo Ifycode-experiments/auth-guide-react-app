@@ -4,9 +4,9 @@ import Tutorial from './Tutorial';
 class AuthApp extends Component {
   render() {
     return (
-        <Fragment>
-            <Tutorial />
-        </Fragment>
+      <Fragment>
+        <Tutorial />
+      </Fragment>
     );
   }
 }
