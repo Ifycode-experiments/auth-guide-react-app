@@ -21,12 +21,31 @@ class Header extends Component {
     this.setState({ visible: !currentVisibleState });
   }
 
+  closeNav = () => {
+    //close nav and show 1st menu btn (smaller screens)
+    this.setState({ hidden: true });
+    this.setState({ visible: true });
+  }
+
+  closeOnNavClick = (e) => {
+    if (e.target === e.currentTarget) {
+      this.closeNav();
+    }
+  }
+
   openModal = () => {
+    // Open modal
     this.props.openModal();
+
+    //close nav (ss)
+    this.closeNav();
   }
 
   logout = () => {
     console.log('Logged Out! ');
+
+    //close nav (ss)
+    this.closeNav();
   }
 
   render() {
@@ -40,7 +59,7 @@ class Header extends Component {
             toggleNav={this.toggleNav}
             visible={this.state.visible}
           />
-          <nav className={`nav nav-show ${this.state.hidden ? 'nav-hide' : '' }`}>
+          <nav onClick={this.closeOnNavClick} className={`nav nav-show ${this.state.hidden ? 'nav-hide' : '' }`}>
             <ul className="menu-container">
               <NavBtn
                 toggleNav={this.toggleNav}
@@ -51,6 +70,7 @@ class Header extends Component {
                 <NavLink
                   key={linkKey}
                   details={linkDetails[linkKey]}
+                  closeNav={this.closeNav}
                 /> :
                 <NavLinkBtn
                   key={linkKey}
