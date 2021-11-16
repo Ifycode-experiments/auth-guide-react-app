@@ -2,6 +2,7 @@ import { Component, Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import '../css/modal.css';
+import Modal from './Modal';
 
 class App extends Component {
 
@@ -15,24 +16,18 @@ class App extends Component {
   }
 
   closeModal = (e) => {
-    // For closing modal (by clicking outside modal-container)
-    if (e.target === e.currentTarget) { 
-      this.setState({ modalVisible: false });
-    }
+    // For closing modal
+    this.setState({ modalVisible: false });
   }
 
   render() {
     return (
       <Fragment>
         <Header openModal={this.openModal} />
-        <section onClick={this.closeModal} className={`modal-container ${this.state.modalVisible ? '' : 'hidden'}`}>
-          <div className="modal">
-            <div className="modal-content">
-              <h4>Test title</h4>
-              <div>Testing modal</div>
-            </div>
-          </div>
-        </section>
+        <Modal
+          modalVisible={this.state.modalVisible}
+          closeModal={this.closeModal}
+        />
         <Outlet />
       </Fragment>
     );
