@@ -19,8 +19,8 @@ button {
   border-left: 1px solid #f4d47c;
 }
 /*========================================
- specific .btn style for specific sections
- =======================================*/
+specific .btn style for specific sections
+=======================================*/
 .nav .btn {
   width: max-content;
   margin: 10px 10px 10px auto;
@@ -34,8 +34,8 @@ button {
     font-size: 1.1em;
   }
   /*========================================
-    specific .btn style for specific sections
-    =======================================*/
+  specific .btn style for specific sections
+  =======================================*/
   .modal .btn {
     margin-top: 10px;
   }

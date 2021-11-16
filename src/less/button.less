@@ -1,54 +1,54 @@
 @import './var.less';
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .btn {
-    background: @theme-dark;
-    color: @yellow-bright;
-    font-size: 1em;
-    text-transform: uppercase;
-    padding: 8px 16px;
-    font-family: "Nunito Sans", sans-serif;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    transition: border 0.2s ease-in;
-    outline: none;
-    font-family: "Nunito Sans", sans-serif; //useful if applied on button element
+  background: @theme-dark;
+  color: @yellow-bright;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  font-family: "Nunito Sans", sans-serif;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: border 0.2s ease-in;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif; //useful if applied on button element
 }
 
 .btn:hover,
 .btn:focus {
-    border-right: 1px solid @yellow-bright;
-    border-left: 1px solid @yellow-bright;
+  border-right: 1px solid @yellow-bright;
+  border-left: 1px solid @yellow-bright;
 }
 
 
 /*========================================
- specific .btn style for specific sections
- =======================================*/
+specific .btn style for specific sections
+=======================================*/
 .nav .btn {
-    width: max-content;
-    margin: 10px 10px 10px auto;
+  width: max-content;
+  margin: 10px 10px 10px auto;
 }
 
 .modal .btn {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 /*======================================*/
 
 
-@media @btn-small-breakpoint { 
-    .btn {
-        font-size: 1.1em;
-    }
+@media @btn-small-breakpoint {
+  .btn {
+    font-size: 1.1em;
+  }
 
-    /*========================================
-    specific .btn style for specific sections
-    =======================================*/
-    .modal .btn {
-        margin-top: 10px;
-    }
-    /*======================================*/
+  /*========================================
+  specific .btn style for specific sections
+  =======================================*/
+  .modal .btn {
+    margin-top: 10px;
+  }
+  /*======================================*/
 }
