@@ -1,5 +1,4 @@
 import { Component, Fragment } from 'react';
-import Header from './Header';
 import DocIntro from './DocIntro';
 import Documentation from './Documentation';
 import docintro from '../helper/docintro';
@@ -9,7 +8,6 @@ class AuthHome extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
         <section className="contain">
           <div className="g g-sb-ls">
             { docintro.map(intro => 
