@@ -7,17 +7,24 @@ import Modal from './Modal';
 class App extends Component {
 
   state = {
-    modalVisible: false
+    modalVisible: false,
+    modalPopup: {}
   }
 
-  openModal = () => {
+  openModal = (modalDetails) => {
     // For opening modal
     this.setState({ modalVisible: true });
+
+    // To determine which modal content to show
+    this.setState({ modalPopup: modalDetails });
   }
 
   closeModal = (e) => {
     // For closing modal
     this.setState({ modalVisible: false });
+
+    // Return modalPopup back to empty array
+    this.setState({ modalPopup: {} });
   }
 
   render() {
@@ -27,6 +34,7 @@ class App extends Component {
         <Modal
           modalVisible={this.state.modalVisible}
           closeModal={this.closeModal}
+          details={this.state.modalPopup}
         />
         <Outlet />
       </Fragment>

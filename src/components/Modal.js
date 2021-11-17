@@ -14,7 +14,7 @@ class Modal extends Component {
       <section onClick={this.closeModal} className={`modal-container ${this.props.modalVisible ? '' : 'hidden'}`}>
         <div className="modal">
           <div className="modal-content">
-            <h4>Test title</h4>
+            <h4>{this.props.details.name ? this.props.details.name.toUpperCase() : ''}</h4>
             <div>Testing modal</div>
           </div>
         </div>

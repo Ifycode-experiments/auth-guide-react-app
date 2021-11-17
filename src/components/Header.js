@@ -33,9 +33,9 @@ class Header extends Component {
     }
   }
 
-  openModal = () => {
+  openModal = (navlinkBtnDetails) => {
     // Open modal
-    this.props.openModal();
+    this.props.openModal(navlinkBtnDetails);
 
     //close nav (ss)
     this.closeNav();
@@ -75,7 +75,7 @@ class Header extends Component {
                 <NavLinkBtn
                   key={linkKey}
                   details={linkDetails[linkKey]}
-                  modal={linkKey === 'logout' ? this.logout : this.openModal}
+                  openModal={linkKey === 'logout' ? this.logout : this.openModal}
                 />
               )}
             </ul>
