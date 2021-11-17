@@ -7,24 +7,18 @@ import '../css/header.css';
 
 class Header extends Component {
   state = {
-    hidden: true,
-    visible: true
+    navHidden: true
   };
 
   toggleNav = () => {
-    //For hiding or showing nav element
-    const currentState = this.state.hidden;
-    this.setState({ hidden: !currentState });
-
-    //For hiding or showing <NavBtn />
-    const currentVisibleState = this.state.visible;
-    this.setState({ visible: !currentVisibleState });
+    //For hiding or showing nav element (and <NavBtn />)
+    const currentNavState = this.state.navHidden;
+    this.setState({ navHidden: !currentNavState });
   }
 
   closeNav = () => {
     //close nav and show 1st menu btn (smaller screens)
-    this.setState({ hidden: true });
-    this.setState({ visible: true });
+    this.setState({ navHidden: true });
   }
 
   closeOnNavClick = (e) => {
@@ -57,13 +51,13 @@ class Header extends Component {
           </a>
           <NavBtn
             toggleNav={this.toggleNav}
-            visible={this.state.visible}
+            visible={this.state.navHidden}
           />
-          <nav onClick={this.closeOnNavClick} className={`nav nav-show ${this.state.hidden ? 'nav-hide' : '' }`}>
+          <nav onClick={this.closeOnNavClick} className={`nav nav-show ${this.state.navHidden ? 'nav-hide' : '' }`}>
             <ul className="menu-container">
               <NavBtn
                 toggleNav={this.toggleNav}
-                visible={!this.state.visible}
+                visible={!this.state.navHidden}
               />
               {Object.keys(linkDetails).map(linkKey =>
                 linkKey === 'documentation' || linkKey === 'tutorial'  ?
