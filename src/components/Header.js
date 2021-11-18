@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import NavBtn from './NavBtn';
-import NavLink from './NavLink';
+import NavAppLink from './NavAppLink';
 import NavLinkBtn from './NavLinkBtn';
 import linkDetails from '../helper/navlinks';
 import '../css/header.css';
@@ -61,7 +61,7 @@ class Header extends Component {
               />
               {Object.keys(linkDetails).map(linkKey =>
                 linkKey === 'documentation' || linkKey === 'tutorial'  ?
-                <NavLink
+                <NavAppLink
                   key={linkKey}
                   details={linkDetails[linkKey]}
                   closeNav={this.closeNav}

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const NavLink = (props) => (
+const NavAppLink = (props) => (
   <li>
     <Link onClick={props.closeNav} to={`./${props.details.name.toLowerCase()}`} className="a">
       <span>{props.details.name}</span>
@@ -8,4 +8,4 @@ const NavLink = (props) => (
   </li>
 );
 
-export default NavLink;
+export default NavAppLink;
