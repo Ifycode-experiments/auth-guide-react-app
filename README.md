@@ -1,7 +1,7 @@
 
 # React (firebase) auth guide app
 
-Firebase authentication guide app with create-react-app. The guide helps to understand how the app works itself. More information on the user roles and what not-logged in users, logged in users and admins will be able to do with this app.
+Firebase authentication guide app with create-react-app. The guide helps to understand how the app works itself. More information on the user roles and what not-logged in users, logged in users and admins will be able to do with this app coming soon after app completion.
 
 
 ## About compiling less to css
