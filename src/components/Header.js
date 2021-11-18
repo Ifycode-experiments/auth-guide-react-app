@@ -7,7 +7,8 @@ import '../css/header.css';
 
 class Header extends Component {
   state = {
-    navHidden: true
+    navHidden: true,
+    navLinkBtnActive: false
   };
 
   toggleNav = () => {
@@ -42,6 +43,10 @@ class Header extends Component {
     this.closeNav();
   }
 
+  hoverOrFocus = (boolenValue) => {
+    this.setState({navLinkBtnActive: boolenValue});
+  }
+
   render() {
     return (
       <header>
@@ -65,11 +70,14 @@ class Header extends Component {
                   key={linkKey}
                   details={linkDetails[linkKey]}
                   closeNav={this.closeNav}
+                  navLinkBtnActive={this.state.navLinkBtnActive}
+                  hoverOrFocus={this.hoverOrFocus}
                 /> :
                 <NavLinkBtn
                   key={linkKey}
                   details={linkDetails[linkKey]}
                   openModal={linkKey === 'logout' ? this.logout : this.openModal}
+                  hoverOrFocus={this.hoverOrFocus}
                 />
               )}
             </ul>

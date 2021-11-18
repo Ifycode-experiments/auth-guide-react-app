@@ -13,10 +13,29 @@ class NavLinkBtn extends Component {
     this.props.openModal(this.props.details);
   }
 
+  /*-----------------------------------------------
+  this.props.hoverOrFocus() collects true or false
+  values to set the navLinkBtnActive state in parent
+  (Header) element on hover or on focus
+  ------------------------------------------------*/
+  enter = () => {
+    this.props.hoverOrFocus(true);
+  }
+
+  leave = () => {
+    this.props.hoverOrFocus(false);
+  }
+
   render() {
     return (
       <li>
-        <button onClick={this.modal} className="a">
+        <button
+          onClick={this.modal} className="a"
+          onMouseEnter={this.enter}
+          onMouseLeave={this.leave}
+          onFocus={this.enter}
+          onBlur={this.leave}
+        >
           {this.props.details.name}
         </button>
       </li>
