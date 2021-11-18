@@ -101,3 +101,9 @@ be on smaller screens
     width: unset;
   }
 }
+.nav .active {
+  background: #2e2e2e;
+  color: #f4d47c;
+  border-right: 1px solid #f4d47c;
+  border-left: 1px solid #f4d47c;
+}

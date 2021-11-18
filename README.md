@@ -10,6 +10,10 @@ Firebase authentication guide app with create-react-app. The guide helps to unde
 
 ## Helpful React resources
 
+### Active links (react router dom 6 - NavLinks)
+- React router dom [tutorial - documentation](https://reactrouter.com/docs/en/v6/getting-started/tutorial#active-links)
+- [Active NavLink Classes with React Router](https://ultimatecourses.com/blog/active-navlink-classes-with-react-router)
+
 ### React router dom 6
 - [React router dom tutorial](https://github.com/remix-run/react-router/blob/main/docs/getting-started/tutorial.md)
 - [Redirects in React router v6](https://gist.github.com/mjackson/b5748add2795ce7448a366ae8f8ae3bb#not-server-rendering)

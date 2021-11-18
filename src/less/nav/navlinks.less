@@ -1,4 +1,12 @@
 
+.focusHoverActive() {
+  background: @theme-dark;
+  color: @yellow-bright;
+  border-right: 1px solid @yellow-bright;
+  border-left: 1px solid @yellow-bright;
+}
+
+// .nav starts here
 .nav {
   .a {
     display: block;
@@ -21,14 +29,15 @@
 
     &:focus,
     &:hover {
-      background: @theme-dark;
-      color: @yellow-bright;
-      border-right: 1px solid @yellow-bright;
-      border-left: 1px solid @yellow-bright;
+      .focusHoverActive();
     }
 
     @media @large-breakpoint {
       width: unset; //modified
     }
+  }
+
+  .active { // Take note: the order of .a and .active matters
+    .focusHoverActive();
   }
 }
