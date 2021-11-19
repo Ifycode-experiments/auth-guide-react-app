@@ -1,4 +1,5 @@
 import { Component, createRef } from 'react';
+import { Link } from 'react-router-dom';
 import NavBtn from './NavBtn';
 import NavAppLink from './NavAppLink';
 import NavLinkBtn from './NavLinkBtn';
@@ -83,9 +84,9 @@ class Header extends Component {
     return (
       <header>
         <div className="contain f-sb-ai-center" >
-          <a className="brand-logo" href="./">
+          <Link to='/' className="brand-logo">
             <img src='./images/logo/auth-logo-colored-2.svg' alt="auth guide app logo" />
-          </a>
+          </Link>
           <NavBtn
             toggleNav={this.toggleNav}
             visible={this.state.navHidden}

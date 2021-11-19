@@ -1,15 +1,34 @@
 @import './var.less';
 
+// mixin
+.focusHoverActive() {
+  background: @theme-dark;
+  color: @yellow-bright;
+  border-right: 1px solid @yellow-bright;
+  border-left: 1px solid @yellow-bright;
+}
+
+// header
 header {
-  padding: 10px 0;
-
-  @media @large-breakpoint {
-    padding: 0;
-  }
-
   .brand-logo {
     width: 160px;
     display: block;
+    padding: 5px;
+    border: 1px solid transparent;
+    outline: none;
+    transition: padding 0.1s ease-in;
+
+    @media @large-breakpoint {
+      padding: 10px 0;
+    }
+
+    &:focus,
+    &:hover {
+      .focusHoverActive();
+      @media @large-breakpoint {
+        padding: 14px 10px;
+      }
+    }
   }
 }
 

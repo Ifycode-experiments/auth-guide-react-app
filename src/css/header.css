@@ -1,14 +1,28 @@
-header {
-  padding: 10px 0;
-}
-@media screen and (min-width: 920px) {
-  header {
-    padding: 0;
-  }
-}
 header .brand-logo {
   width: 160px;
   display: block;
+  padding: 5px;
+  border: 1px solid transparent;
+  outline: none;
+  transition: padding 0.1s ease-in;
+}
+@media screen and (min-width: 920px) {
+  header .brand-logo {
+    padding: 10px 0;
+  }
+}
+header .brand-logo:focus,
+header .brand-logo:hover {
+  background: #2e2e2e;
+  color: #f4d47c;
+  border-right: 1px solid #f4d47c;
+  border-left: 1px solid #f4d47c;
+}
+@media screen and (min-width: 920px) {
+  header .brand-logo:focus,
+  header .brand-logo:hover {
+    padding: 14px 10px;
+  }
 }
 .nav {
   position: fixed;
