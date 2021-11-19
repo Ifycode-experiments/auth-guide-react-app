@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 import NavBtn from './NavBtn';
 import NavAppLink from './NavAppLink';
 import NavLinkBtn from './NavLinkBtn';
@@ -8,8 +8,12 @@ import '../css/header.css';
 class Header extends Component {
   state = {
     navHidden: true,
-    navLinkBtnActive: false
+    navLinkBtnActive: false,
+    atLeastOneNavLinkOrBtnHasFocus: false,
+    mouseEnter: false
   };
+
+  menuContainerRef = createRef();
 
   toggleNav = () => {
     //For hiding or showing nav element (and <NavBtn />)
@@ -47,6 +51,34 @@ class Header extends Component {
     this.setState({navLinkBtnActive: boolenValue});
   }
 
+  removeFocusOnHover = (mouseEnter) => {
+    let navLinksOrBtns = this.menuContainerRef.current.children;
+    navLinksOrBtns = Array.from(navLinksOrBtns).map(child => {
+      return Array.from(child.children)[0];
+    })
+    .filter(child => child !== undefined); //this removes menu-btn from the list (which is not needed);
+
+    let atLeastOneNavLinkOrBtnHasFocus = navLinksOrBtns.some(links => {
+      const el = document.activeElement;
+      return el === links;
+    });
+
+    //set state - atLeastOneNavLinkOrBtnHasFocus
+    this.setState({ atLeastOneNavLinkOrBtnHasFocus });
+
+    let theOneNavLinkOrBtnThatHasFocus = navLinksOrBtns.filter(links => {
+      const el = document.activeElement;
+      return el === links;
+    });
+
+    if (mouseEnter && atLeastOneNavLinkOrBtnHasFocus) {
+      theOneNavLinkOrBtnThatHasFocus[0].blur();
+    }
+
+    //set state - mouseEnter
+    this.setState({ mouseEnter });
+  }
+
   render() {
     return (
       <header>
@@ -59,7 +91,7 @@ class Header extends Component {
             visible={this.state.navHidden}
           />
           <nav onClick={this.closeOnNavClick} className={`nav nav-show ${this.state.navHidden ? 'nav-hide' : '' }`}>
-            <ul className="menu-container">
+            <ul ref={this.menuContainerRef} className="menu-container">
               <NavBtn
                 toggleNav={this.toggleNav}
                 visible={!this.state.navHidden}
@@ -72,12 +104,16 @@ class Header extends Component {
                   closeNav={this.closeNav}
                   navLinkBtnActive={this.state.navLinkBtnActive}
                   hoverOrFocus={this.hoverOrFocus}
+                  removeFocusOnHover={this.removeFocusOnHover}
+                  atLeastOneNavLinkOrBtnHasFocus={this.state.atLeastOneNavLinkOrBtnHasFocus}
+                  mouseEnter={this.state.mouseEnter}
                 /> :
                 <NavLinkBtn
                   key={linkKey}
                   details={linkDetails[linkKey]}
                   openModal={linkKey === 'logout' ? this.logout : this.openModal}
                   hoverOrFocus={this.hoverOrFocus}
+                  removeFocusOnHover={this.removeFocusOnHover}
                 />
               )}
             </ul>
