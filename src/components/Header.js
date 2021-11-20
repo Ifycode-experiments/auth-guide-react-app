@@ -22,6 +22,26 @@ class Header extends Component {
   surfaceDocLinkRef = createRef();
   surfaceTutLinkRef = createRef();
 
+  componentDidMount() {
+    this.activePageLinkGetsFocus();
+  }
+
+  activePageLinkGetsFocus = () => {
+    /*-----------------------------------------------------------------------
+    Returns focus to active page link so that tabbing through the links after
+    hover is understandable. Focus will continue after active page link when
+    tab key is used - see if (mouseLeave) {} condition inside removeFocusOnHover
+    function. Also made to work on page load with componentDidMount() {}
+    ------------------------------------------------------------------------*/
+    if (this.surfaceDocLinkRef.current.navAppLinkRef.current.ariaCurrent !== null) {
+      this.surfaceDocLinkRef.current.navAppLinkRef.current.focus();
+    }
+
+    if (this.surfaceTutLinkRef.current.navAppLinkRef.current.ariaCurrent !== null) {
+      this.surfaceTutLinkRef.current.navAppLinkRef.current.focus();
+    }
+  }
+
   toggleNav = () => {
     //For hiding or showing nav element (and <NavBtn />)
     const currentNavState = this.state.navHidden;
@@ -56,7 +76,6 @@ class Header extends Component {
 
   hoverOrFocus = (boolenValue) => {
     this.setState({navLinkBtnActive: boolenValue});
-    //console.log(this.surfaceNavAppLinkRef.current.navAppLinkRef.current);
   }
 
   removeFocusOnHover = (mouseEnter, mouseLeaveLogoOrLogout, mouseLeave) => {
@@ -99,14 +118,7 @@ class Header extends Component {
     //----------------------------------------
 
     if (mouseLeave) {
-      /*
-       To Do: since NavAppLink.js line 45 is giving me issues, try get
-       the active link (only) from here - in Header component. That's where
-       these two console.logs below come in.
-      */
-
-      //console.log(this.surfaceDocLinkRef.current.navAppLinkRef.current);
-      //console.log(this.surfaceTutLinkRef.current.navAppLinkRef.current);
+      this.activePageLinkGetsFocus();
     }
 
     //set state - mouseEnter

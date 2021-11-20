@@ -5,8 +5,9 @@ class NavAppLink extends Component {
 
   /*-----------------------------
   Create navAppLinkRef to be used
-  in the surface...LinkRef in the
-  parent (Header) element
+  in the surfaceDocLinkRef or the
+  surfaceTutLinkRef in the parent
+  (Header) element
   -----------------------------*/
   navAppLinkRef = createRef();
 
@@ -29,7 +30,13 @@ class NavAppLink extends Component {
           if (mouseEnter && appLogoHasFocus) {
             logoLink.blur();
           }
-      -----------------------------------------------*/
+      ----------------------------------------------------
+      This works but gives error (so it has be removed):
+        if (this.props.mouseLeave) {
+          this.navAppLinkRef.current.focus();
+        }
+      See working solution in Header component: if (mouseLeave) {}
+      ---------------------------------------------------*/
 
       isActive = !this.props.navLinkBtnActive;
 
@@ -39,10 +46,6 @@ class NavAppLink extends Component {
 
       if (this.props.mouseEnter) {
         isActive = !this.props.mouseEnter;
-      }
-
-      if (this.props.mouseLeave) {
-        this.navAppLinkRef.current.focus();
       }
     }
 
@@ -63,13 +66,11 @@ class NavAppLink extends Component {
   }
 
   mouseEnter = () => {
-    //console.log(this.navAppLinkRef.current)
     this.props.hoverOrFocus(true);
     this.props.removeFocusOnHover(true, false, false);
   }
 
   mouseLeave = () => {
-    //console.log(this.navAppLinkRef.current);
     this.props.hoverOrFocus(false);
     this.props.removeFocusOnHover(false, false, true);
   }
