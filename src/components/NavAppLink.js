@@ -1,7 +1,14 @@
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 import { NavLink } from 'react-router-dom';
 
 class NavAppLink extends Component {
+
+  /*-----------------------------
+  Create navAppLinkRef to be used
+  in the surface...LinkRef in the
+  parent (Header) element
+  -----------------------------*/
+  navAppLinkRef = createRef();
 
   activeOrNot = (isActive) => {
 
@@ -33,6 +40,10 @@ class NavAppLink extends Component {
       if (this.props.mouseEnter) {
         isActive = !this.props.mouseEnter;
       }
+
+      if (this.props.mouseLeave) {
+        this.navAppLinkRef.current.focus();
+      }
     }
 
     return isActive ? 'a active' : 'a'
@@ -48,17 +59,24 @@ class NavAppLink extends Component {
   ------------------------------------------------*/
   enter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(false, false);
+    this.props.removeFocusOnHover(false, false, false);
   }
 
   mouseEnter = () => {
+    //console.log(this.navAppLinkRef.current)
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(true, false);
+    this.props.removeFocusOnHover(true, false, false);
+  }
+
+  mouseLeave = () => {
+    //console.log(this.navAppLinkRef.current);
+    this.props.hoverOrFocus(false);
+    this.props.removeFocusOnHover(false, false, true);
   }
 
   leave = () => {
     this.props.hoverOrFocus(false);
-    this.props.removeFocusOnHover(false, false);
+    this.props.removeFocusOnHover(false, false, false);
   }
 
   render() {
@@ -68,9 +86,10 @@ class NavAppLink extends Component {
           onClick={this.props.closeNav} to={`/${this.props.details.name.toLowerCase()}`}
           className={({isActive}) => this.activeOrNot(isActive)}
           onMouseEnter={this.mouseEnter}
-          onMouseLeave={this.leave}
+          onMouseLeave={this.mouseLeave}
           onFocus={this.enter}
           onBlur={this.leave}
+          ref={this.navAppLinkRef}
         >
           {this.props.details.name}
         </NavLink>

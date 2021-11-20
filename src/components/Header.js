@@ -13,11 +13,14 @@ class Header extends Component {
     atLeastOneNavLinkOrBtnHasFocus: false,
     appLogoHasFocus: false,
     mouseEnter: false,
-    mouseLeaveLogoOrLogout: false
+    mouseLeaveLogoOrLogout: false,
+    mouseLeave: false
   };
 
   menuContainerRef = createRef();
   surfaceAppLogoRef = createRef();
+  surfaceDocLinkRef = createRef();
+  surfaceTutLinkRef = createRef();
 
   toggleNav = () => {
     //For hiding or showing nav element (and <NavBtn />)
@@ -53,9 +56,10 @@ class Header extends Component {
 
   hoverOrFocus = (boolenValue) => {
     this.setState({navLinkBtnActive: boolenValue});
+    //console.log(this.surfaceNavAppLinkRef.current.navAppLinkRef.current);
   }
 
-  removeFocusOnHover = (mouseEnter, mouseLeaveLogoOrLogout) => {
+  removeFocusOnHover = (mouseEnter, mouseLeaveLogoOrLogout, mouseLeave) => {
     let navLinksOrBtns = this.menuContainerRef.current.children;
     navLinksOrBtns = Array.from(navLinksOrBtns).map(child => {
       return Array.from(child.children)[0];
@@ -94,11 +98,25 @@ class Header extends Component {
 
     //----------------------------------------
 
+    if (mouseLeave) {
+      /*
+       To Do: since NavAppLink.js line 45 is giving me issues, try get
+       the active link (only) from here - in Header component. That's where
+       these two console.logs below come in.
+      */
+
+      //console.log(this.surfaceDocLinkRef.current.navAppLinkRef.current);
+      //console.log(this.surfaceTutLinkRef.current.navAppLinkRef.current);
+    }
+
     //set state - mouseEnter
     this.setState({ mouseEnter });
 
-    //set state - mouseEnter
+    //set state - mouseLeaveLogoOrLogout
     this.setState({ mouseLeaveLogoOrLogout });
+
+    //set state - mouseLeave
+    this.setState({ mouseLeave });
   }
 
   render() {
@@ -132,6 +150,8 @@ class Header extends Component {
                   atLeastOneNavLinkOrBtnHasFocus={this.state.atLeastOneNavLinkOrBtnHasFocus}
                   appLogoHasFocus={this.state.appLogoHasFocus}
                   mouseEnter={this.state.mouseEnter}
+                  mouseLeave={this.state.mouseLeave}
+                  ref={linkKey === 'documentation' ? this.surfaceDocLinkRef : this.surfaceTutLinkRef}
                 /> :
                 <NavLinkBtn
                   key={linkKey}
