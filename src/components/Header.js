@@ -12,7 +12,8 @@ class Header extends Component {
     navLinkBtnActive: false,
     atLeastOneNavLinkOrBtnHasFocus: false,
     appLogoHasFocus: false,
-    mouseEnter: false
+    mouseEnter: false,
+    mouseLeaveLogoOrLogout: false
   };
 
   menuContainerRef = createRef();
@@ -54,7 +55,7 @@ class Header extends Component {
     this.setState({navLinkBtnActive: boolenValue});
   }
 
-  removeFocusOnHover = (mouseEnter) => {
+  removeFocusOnHover = (mouseEnter, mouseLeaveLogoOrLogout) => {
     let navLinksOrBtns = this.menuContainerRef.current.children;
     navLinksOrBtns = Array.from(navLinksOrBtns).map(child => {
       return Array.from(child.children)[0];
@@ -74,7 +75,7 @@ class Header extends Component {
       return el === links;
     });
 
-    if (mouseEnter && atLeastOneNavLinkOrBtnHasFocus) {
+    if ((mouseEnter && atLeastOneNavLinkOrBtnHasFocus) || (mouseLeaveLogoOrLogout && atLeastOneNavLinkOrBtnHasFocus)) {
       theOneNavLinkOrBtnThatHasFocus[0].blur();
     }
 
@@ -84,7 +85,7 @@ class Header extends Component {
     const el = document.activeElement;
     let appLogoHasFocus = el === logoLink;
 
-    if (mouseEnter && appLogoHasFocus) {
+    if (mouseLeaveLogoOrLogout && appLogoHasFocus) {
       logoLink.blur();
     }
 
@@ -95,6 +96,9 @@ class Header extends Component {
 
     //set state - mouseEnter
     this.setState({ mouseEnter });
+
+    //set state - mouseEnter
+    this.setState({ mouseLeaveLogoOrLogout });
   }
 
   render() {
@@ -135,6 +139,7 @@ class Header extends Component {
                   openModal={linkKey === 'logout' ? this.logout : this.openModal}
                   hoverOrFocus={this.hoverOrFocus}
                   removeFocusOnHover={this.removeFocusOnHover}
+                  linkKey={linkKey}
                 />
               )}
             </ul>

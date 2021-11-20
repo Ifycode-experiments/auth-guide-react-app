@@ -10,18 +10,24 @@ class NavAppLink extends Component {
       set isActive to false when the following happens:
       1. navBtnLinkActive is true (i.e. hover and focus)
       2. If at least one of the nav links/btns has focus
-      3. If the (auth guide react) app logo has focus
-      4. If mouseEnter is true for any nav links/btns
+      3. If mouseEnter is true for any nav links/btns
+      --------------------------------------------------
+      4. If the (auth guide react) app logo has focus has
+         been removed - but kept here for later reference
+          if (this.props.appLogoHasFocus) {
+            isActive = !this.props.appLogoHasFocus;
+          }
+         This was previously used together with the statement
+         below inside the removeFocusOnHover() in Header component:
+          if (mouseEnter && appLogoHasFocus) {
+            logoLink.blur();
+          }
       -----------------------------------------------*/
 
       isActive = !this.props.navLinkBtnActive;
 
       if (this.props.atLeastOneNavLinkOrBtnHasFocus) {
         isActive = !this.props.atLeastOneNavLinkOrBtnHasFocus;
-      }
-
-      if (this.props.appLogoHasFocus) {
-        isActive = !this.props.appLogoHasFocus;
       }
 
       if (this.props.mouseEnter) {
@@ -42,17 +48,17 @@ class NavAppLink extends Component {
   ------------------------------------------------*/
   enter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(false);
+    this.props.removeFocusOnHover(false, false);
   }
 
   mouseEnter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(true);
+    this.props.removeFocusOnHover(true, false);
   }
 
   leave = () => {
     this.props.hoverOrFocus(false);
-    this.props.removeFocusOnHover(false);
+    this.props.removeFocusOnHover(false, false);
   }
 
   render() {

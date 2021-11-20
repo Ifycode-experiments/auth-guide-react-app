@@ -20,24 +20,29 @@ class AppLogo extends Component {
   ------------------------------------------------*/
   enter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(false);
+    this.props.removeFocusOnHover(false, false);
   }
 
   mouseEnter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(true);
+    this.props.removeFocusOnHover(true, false);
+  }
+
+  mouseLeave = () => {
+    this.props.hoverOrFocus(false);
+    this.props.removeFocusOnHover(false, true);
   }
 
   leave = () => {
     this.props.hoverOrFocus(false);
-    this.props.removeFocusOnHover(false);
+    this.props.removeFocusOnHover(false, false);
   }
 
   render() {
     return (
       <Link to='/' className="brand-logo"
         onMouseEnter={this.mouseEnter}
-        onMouseLeave={this.leave}
+        onMouseLeave={this.mouseLeave}
         onFocus={this.enter}
         onBlur={this.leave}
         ref={this.appLogoRef}
