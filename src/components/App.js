@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component, createRef, Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import '../css/modal.css';
@@ -10,6 +10,8 @@ class App extends Component {
     modalVisible: false,
     modalPopup: {}
   }
+
+  headerRef = createRef();
 
   openModal = (modalDetails) => {
     // For opening modal
@@ -25,12 +27,21 @@ class App extends Component {
 
     // Return modalPopup back to empty array
     this.setState({ modalPopup: {} });
+
+    /*------------------------------------------------
+    Call activePageLinkGetsFocus() found inside header
+    when modal is closed - interesting!!!
+    ------------------------------------------------*/
+    this.headerRef.current.activePageLinkGetsFocus();
   }
 
   render() {
     return (
       <Fragment>
-        <Header openModal={this.openModal} />
+        <Header
+          openModal={this.openModal}
+          ref={this.headerRef}
+        />
         <Modal
           modalVisible={this.state.modalVisible}
           closeModal={this.closeModal}
