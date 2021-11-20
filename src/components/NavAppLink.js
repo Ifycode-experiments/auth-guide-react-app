@@ -10,13 +10,18 @@ class NavAppLink extends Component {
       set isActive to false when the following happens:
       1. navBtnLinkActive is true (i.e. hover and focus)
       2. If at least one of the nav links/btns has focus
-      3. If mouseEnter is true for any nav links/btns
+      3. If the (auth guide react) app logo has focus
+      4. If mouseEnter is true for any nav links/btns
       -----------------------------------------------*/
 
       isActive = !this.props.navLinkBtnActive;
 
       if (this.props.atLeastOneNavLinkOrBtnHasFocus) {
         isActive = !this.props.atLeastOneNavLinkOrBtnHasFocus;
+      }
+
+      if (this.props.appLogoHasFocus) {
+        isActive = !this.props.appLogoHasFocus;
       }
 
       if (this.props.mouseEnter) {

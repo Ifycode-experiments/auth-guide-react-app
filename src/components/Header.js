@@ -1,5 +1,5 @@
 import { Component, createRef } from 'react';
-import { Link } from 'react-router-dom';
+import AppLogo from './AppLogo';
 import NavBtn from './NavBtn';
 import NavAppLink from './NavAppLink';
 import NavLinkBtn from './NavLinkBtn';
@@ -11,10 +11,12 @@ class Header extends Component {
     navHidden: true,
     navLinkBtnActive: false,
     atLeastOneNavLinkOrBtnHasFocus: false,
+    appLogoHasFocus: false,
     mouseEnter: false
   };
 
   menuContainerRef = createRef();
+  surfaceAppLogoRef = createRef();
 
   toggleNav = () => {
     //For hiding or showing nav element (and <NavBtn />)
@@ -76,6 +78,21 @@ class Header extends Component {
       theOneNavLinkOrBtnThatHasFocus[0].blur();
     }
 
+    //---| remove focus for AppLogo only |----
+
+    const logoLink = this.surfaceAppLogoRef.current.appLogoRef.current;
+    const el = document.activeElement;
+    let appLogoHasFocus = el === logoLink;
+
+    if (mouseEnter && appLogoHasFocus) {
+      logoLink.blur();
+    }
+
+    //set state - appLogoHasFocus
+    this.setState({ appLogoHasFocus });
+
+    //----------------------------------------
+
     //set state - mouseEnter
     this.setState({ mouseEnter });
   }
@@ -84,9 +101,11 @@ class Header extends Component {
     return (
       <header>
         <div className="contain f-sb-ai-center" >
-          <Link to='/' className="brand-logo">
-            <img src='./images/logo/auth-logo-colored-2.svg' alt="auth guide app logo" />
-          </Link>
+          <AppLogo
+            hoverOrFocus={this.hoverOrFocus}
+            removeFocusOnHover={this.removeFocusOnHover}
+            ref={this.surfaceAppLogoRef}
+          />
           <NavBtn
             toggleNav={this.toggleNav}
             visible={this.state.navHidden}
@@ -107,6 +126,7 @@ class Header extends Component {
                   hoverOrFocus={this.hoverOrFocus}
                   removeFocusOnHover={this.removeFocusOnHover}
                   atLeastOneNavLinkOrBtnHasFocus={this.state.atLeastOneNavLinkOrBtnHasFocus}
+                  appLogoHasFocus={this.state.appLogoHasFocus}
                   mouseEnter={this.state.mouseEnter}
                 /> :
                 <NavLinkBtn
