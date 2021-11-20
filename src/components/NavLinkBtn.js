@@ -23,22 +23,27 @@ class NavLinkBtn extends Component {
   ------------------------------------------------*/
   enter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(false, false);
+    this.props.removeFocusOnHover(false, false, false);
   }
 
   mouseEnter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(true, false);
+    this.props.removeFocusOnHover(true, false, false);
+  }
+
+  mouseLeaveLogOut = () => {
+    this.props.hoverOrFocus(false);
+    this.props.removeFocusOnHover(false, true, true);
   }
 
   mouseLeave = () => {
     this.props.hoverOrFocus(false);
-    this.props.removeFocusOnHover(false, true);
+    this.props.removeFocusOnHover(false, false, true);
   }
 
   leave = () => {
     this.props.hoverOrFocus(false);
-    this.props.removeFocusOnHover(false, false);
+    this.props.removeFocusOnHover(false, false, false);
   }
 
   render() {
@@ -47,7 +52,7 @@ class NavLinkBtn extends Component {
         <button
           onClick={this.modal} className="a"
           onMouseEnter={this.mouseEnter}
-          onMouseLeave={this.props.linkKey === 'logout' ? this.mouseLeave : this.leave}
+          onMouseLeave={this.props.linkKey === 'logout' ? this.mouseLeaveLogOut : this.mouseLeave}
           onFocus={this.enter}
           onBlur={this.leave}
         >

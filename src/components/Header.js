@@ -13,11 +13,34 @@ class Header extends Component {
     atLeastOneNavLinkOrBtnHasFocus: false,
     appLogoHasFocus: false,
     mouseEnter: false,
-    mouseLeaveLogoOrLogout: false
+    mouseLeaveLogoOrLogout: false,
+    mouseLeave: false
   };
 
   menuContainerRef = createRef();
   surfaceAppLogoRef = createRef();
+  surfaceDocLinkRef = createRef();
+  surfaceTutLinkRef = createRef();
+
+  componentDidMount() {
+    this.activePageLinkGetsFocus();
+  }
+
+  activePageLinkGetsFocus = () => {
+    /*-----------------------------------------------------------------------
+    Returns focus to active page link so that tabbing through the links after
+    hover is understandable. Focus will continue after active page link when
+    tab key is used - see if (mouseLeave) {} condition inside removeFocusOnHover
+    function. Also made to work on page load with componentDidMount() {}
+    ------------------------------------------------------------------------*/
+    if (this.surfaceDocLinkRef.current.navAppLinkRef.current.ariaCurrent !== null) {
+      this.surfaceDocLinkRef.current.navAppLinkRef.current.focus();
+    }
+
+    if (this.surfaceTutLinkRef.current.navAppLinkRef.current.ariaCurrent !== null) {
+      this.surfaceTutLinkRef.current.navAppLinkRef.current.focus();
+    }
+  }
 
   toggleNav = () => {
     //For hiding or showing nav element (and <NavBtn />)
@@ -55,7 +78,7 @@ class Header extends Component {
     this.setState({navLinkBtnActive: boolenValue});
   }
 
-  removeFocusOnHover = (mouseEnter, mouseLeaveLogoOrLogout) => {
+  removeFocusOnHover = (mouseEnter, mouseLeaveLogoOrLogout, mouseLeave) => {
     let navLinksOrBtns = this.menuContainerRef.current.children;
     navLinksOrBtns = Array.from(navLinksOrBtns).map(child => {
       return Array.from(child.children)[0];
@@ -94,11 +117,18 @@ class Header extends Component {
 
     //----------------------------------------
 
+    if (mouseLeave) {
+      this.activePageLinkGetsFocus();
+    }
+
     //set state - mouseEnter
     this.setState({ mouseEnter });
 
-    //set state - mouseEnter
+    //set state - mouseLeaveLogoOrLogout
     this.setState({ mouseLeaveLogoOrLogout });
+
+    //set state - mouseLeave
+    this.setState({ mouseLeave });
   }
 
   render() {
@@ -132,6 +162,8 @@ class Header extends Component {
                   atLeastOneNavLinkOrBtnHasFocus={this.state.atLeastOneNavLinkOrBtnHasFocus}
                   appLogoHasFocus={this.state.appLogoHasFocus}
                   mouseEnter={this.state.mouseEnter}
+                  mouseLeave={this.state.mouseLeave}
+                  ref={linkKey === 'documentation' ? this.surfaceDocLinkRef : this.surfaceTutLinkRef}
                 /> :
                 <NavLinkBtn
                   key={linkKey}

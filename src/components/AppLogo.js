@@ -20,22 +20,22 @@ class AppLogo extends Component {
   ------------------------------------------------*/
   enter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(false, false);
+    this.props.removeFocusOnHover(false, false, false);
   }
 
   mouseEnter = () => {
     this.props.hoverOrFocus(true);
-    this.props.removeFocusOnHover(true, false);
+    this.props.removeFocusOnHover(true, false, false);
   }
 
   mouseLeave = () => {
     this.props.hoverOrFocus(false);
-    this.props.removeFocusOnHover(false, true);
+    this.props.removeFocusOnHover(false, true, true);
   }
 
   leave = () => {
     this.props.hoverOrFocus(false);
-    this.props.removeFocusOnHover(false, false);
+    this.props.removeFocusOnHover(false, false, false);
   }
 
   render() {
