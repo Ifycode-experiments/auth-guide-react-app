@@ -1,6 +1,16 @@
-import { Component } from "react";
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Modal extends Component {
+
+  static propTypes = {
+    closeModal: PropTypes.func,
+    modalVisible: PropTypes.bool,
+    details: PropTypes.shape({
+      alias: PropTypes.string,
+      name: PropTypes.string
+    })
+  }
 
   closeModal = e => {
     // For closing modal (by clicking outside modal-container)

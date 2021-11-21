@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 const DocIntro = (props) => (
   <Fragment>
@@ -13,5 +14,16 @@ const DocIntro = (props) => (
     </article>
   </Fragment>
 );
+
+DocIntro.propTypes = {
+  details: PropTypes.shape({
+    title: PropTypes.string,
+    paragraph: PropTypes.string,
+    image: PropTypes.shape({
+      alt: PropTypes.string,
+      url: PropTypes.string
+    })
+  })
+}
 
 export default DocIntro;

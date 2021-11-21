@@ -1,4 +1,5 @@
 import { Component, createRef } from 'react';
+import PropTypes from 'prop-types';
 import AppLogo from './AppLogo';
 import NavBtn from './NavBtn';
 import NavAppLink from './NavAppLink';
@@ -7,6 +8,11 @@ import linkDetails from '../helper/navlinks';
 import '../css/header.css';
 
 class Header extends Component {
+
+  static propTypes = {
+    openModal: PropTypes.func
+  }
+
   state = {
     navHidden: true,
     navLinkBtnActive: false,
@@ -160,9 +166,7 @@ class Header extends Component {
                   hoverOrFocus={this.hoverOrFocus}
                   removeFocusOnHover={this.removeFocusOnHover}
                   atLeastOneNavLinkOrBtnHasFocus={this.state.atLeastOneNavLinkOrBtnHasFocus}
-                  appLogoHasFocus={this.state.appLogoHasFocus}
                   mouseEnter={this.state.mouseEnter}
-                  mouseLeave={this.state.mouseLeave}
                   ref={linkKey === 'documentation' ? this.surfaceDocLinkRef : this.surfaceTutLinkRef}
                 /> :
                 <NavLinkBtn

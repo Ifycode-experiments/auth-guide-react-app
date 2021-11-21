@@ -1,6 +1,18 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NavLinkBtn extends Component {
+
+  static propTypes = {
+    hoverOrFocus: PropTypes.func,
+    linkKey: PropTypes.string,
+    openModal: PropTypes.func,
+    removeFocusOnHover: PropTypes.func,
+    details: PropTypes.shape({
+      alias: PropTypes.string,
+      name: PropTypes.string
+    })
+  }
 
   modal = () => {
     /*---------------------------------------------

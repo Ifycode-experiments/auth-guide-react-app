@@ -1,7 +1,21 @@
 import { Component, createRef } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 class NavAppLink extends Component {
+
+  static propTypes = {
+    atLeastOneNavLinkOrBtnHasFocus: PropTypes.bool,
+    closeNav: PropTypes.func,
+    hoverOrFocus: PropTypes.func,
+    mouseEnter: PropTypes.bool,
+    navLinkBtnActive: PropTypes.bool,
+    removeFocusOnHover: PropTypes.func,
+    details: PropTypes.shape({
+      alias: PropTypes.string,
+      name: PropTypes.string
+    })
+  }
 
   /*-----------------------------
   Create navAppLinkRef to be used

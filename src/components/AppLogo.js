@@ -1,7 +1,13 @@
 import { Component, createRef } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class AppLogo extends Component {
+
+  static propTypes = {
+    hoverOrFocus: PropTypes.func,
+    removeFocusOnHover: PropTypes.func
+  }
 
   /*--------------------------
   Create appLogoRef to be used
