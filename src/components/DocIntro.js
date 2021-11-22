@@ -1,19 +1,22 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-const DocIntro = (props) => (
-  <Fragment>
-    <article className="intro">
-      <div className="icon">
-        <img src={props.details.image.url} alt={props.details.image.alt} />
-      </div>
-      <div>
-        <h1>{props.details.title}</h1>
-        <p>{props.details.paragraph}</p>
-      </div>
-    </article>
-  </Fragment>
-);
+const DocIntro = (props) => {
+  const details = props.details;
+  return (
+    <Fragment>
+      <article className="intro">
+        <div className="icon">
+          <img src={details.image.url} alt={details.image.alt} />
+        </div>
+        <div>
+          <h1>{details.title}</h1>
+          <p>{details.paragraph}</p>
+        </div>
+      </article>
+    </Fragment>
+  )
+};
 
 DocIntro.propTypes = {
   details: PropTypes.shape({

@@ -7,8 +7,7 @@ const MenuBtn = (props) => (
 );
 
 MenuBtn.propTypes = {
-  toggleNav: PropTypes.func,
-  visible: PropTypes.bool
+  toggleNav: PropTypes.func
 }
 
 export default MenuBtn;

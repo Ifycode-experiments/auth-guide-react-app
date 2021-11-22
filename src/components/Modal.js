@@ -7,11 +7,11 @@ class Modal extends Component {
 
   static propTypes = {
     closeModal: PropTypes.func,
-    modalVisible: PropTypes.bool,
     details: PropTypes.shape({
       modal: PropTypes.string,
       name: PropTypes.string,
-      form: PropTypes.bool
+      form: PropTypes.bool,
+      formInfo: PropTypes.object
     })
   }
 

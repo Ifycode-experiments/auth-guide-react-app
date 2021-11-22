@@ -13,7 +13,7 @@ class NavAppLink extends Component {
     removeFocusOnHover: PropTypes.func,
     details: PropTypes.shape({
       name: PropTypes.string
-      //we don't need form or modal here
+      // Don't need form or modal here
     })
   }
 

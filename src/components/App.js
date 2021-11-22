@@ -60,7 +60,6 @@ class App extends Component {
         />
         {this.state.modalVisible ?
           <Modal
-            modalVisible={this.state.modalVisible}
             closeModal={this.closeModal}
             details={this.state.modalPopup}
           /> : null

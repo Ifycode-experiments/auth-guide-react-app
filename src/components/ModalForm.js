@@ -1,6 +1,17 @@
 import { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 class ModalForm extends Component {
+
+  static propTypes = {
+    details: PropTypes.shape({
+      modal: PropTypes.string,
+      name: PropTypes.string,
+      form: PropTypes.bool,
+      formInfo: PropTypes.object
+    })
+  }
+
   render() {
     const details = this.props.details;
     const info = details.formInfo;

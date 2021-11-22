@@ -10,7 +10,8 @@ import '../css/header.css';
 class Header extends Component {
 
   static propTypes = {
-    openModal: PropTypes.func
+    openModal: PropTypes.func,
+    bodyScrollAddOrRemove: PropTypes.func,
   }
 
   state = {
