@@ -156,16 +156,19 @@ class Header extends Component {
             removeFocusOnHover={this.removeFocusOnHover}
             ref={this.surfaceAppLogoRef}
           />
-          <MenuBtn
-            toggleNav={this.toggleNav}
-            visible={this.state.navHidden}
-          />
+          {this.state.navHidden ?
+            <MenuBtn
+              toggleNav={this.toggleNav}
+            /> : null
+          }
           <nav onClick={this.closeOnNavClick} className={`nav nav-show ${this.state.navHidden ? 'nav-hide' : '' }`}>
             <ul ref={this.menuContainerRef} className="menu-container">
-              <MenuBtn
-                toggleNav={this.toggleNav}
-                visible={!this.state.navHidden}
-              />
+              {this.state.navHidden ?
+                null :
+                <MenuBtn
+                  toggleNav={this.toggleNav}
+                />
+              }
               {Object.keys(linkDetails).map(linkKey =>
                 linkKey === 'documentation' || linkKey === 'tutorial'  ?
                 <NavAppLink
