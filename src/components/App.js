@@ -58,11 +58,13 @@ class App extends Component {
           bodyScrollAddOrRemove={this.bodyScrollAddOrRemove}
           ref={this.headerRef}
         />
-        <Modal
-          modalVisible={this.state.modalVisible}
-          closeModal={this.closeModal}
-          details={this.state.modalPopup}
-        />
+        {this.state.modalVisible ?
+          <Modal
+            modalVisible={this.state.modalVisible}
+            closeModal={this.closeModal}
+            details={this.state.modalPopup}
+          /> : null
+        }
         <Outlet />
       </Fragment>
     );
