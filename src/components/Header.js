@@ -1,7 +1,7 @@
 import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import AppLogo from './AppLogo';
-import NavBtn from './NavBtn';
+import MenuBtn from './MenuBtn';
 import NavAppLink from './NavAppLink';
 import NavLinkBtn from './NavLinkBtn';
 import linkDetails from '../helper/navlinks';
@@ -49,7 +49,7 @@ class Header extends Component {
   }
 
   toggleNav = () => {
-    //For hiding or showing nav element (and <NavBtn />)
+    //For hiding or showing nav element (and <MenuBtn />)
     const currentNavState = this.state.navHidden;
     this.setState({ navHidden: !currentNavState });
 
@@ -156,13 +156,13 @@ class Header extends Component {
             removeFocusOnHover={this.removeFocusOnHover}
             ref={this.surfaceAppLogoRef}
           />
-          <NavBtn
+          <MenuBtn
             toggleNav={this.toggleNav}
             visible={this.state.navHidden}
           />
           <nav onClick={this.closeOnNavClick} className={`nav nav-show ${this.state.navHidden ? 'nav-hide' : '' }`}>
             <ul ref={this.menuContainerRef} className="menu-container">
-              <NavBtn
+              <MenuBtn
                 toggleNav={this.toggleNav}
                 visible={!this.state.navHidden}
               />
