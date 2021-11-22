@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import ModalForm from './ModalForm';
+import ModalContent from './ModalContent';
 
 class Modal extends Component {
 
@@ -8,7 +10,8 @@ class Modal extends Component {
     modalVisible: PropTypes.bool,
     details: PropTypes.shape({
       alias: PropTypes.string,
-      name: PropTypes.string
+      name: PropTypes.string,
+      form: PropTypes.bool
     })
   }
 
@@ -20,12 +23,14 @@ class Modal extends Component {
   }
 
   render() {
+    const details = this.props.details;
     return (
       <section onClick={this.closeModal} className={`modal-container ${this.props.modalVisible ? '' : 'hidden'}`}>
         <div className="modal">
           <div className="modal-content">
-            <h4>{this.props.details.name ? this.props.details.name.toUpperCase() : ''}</h4>
-            <div>Testing modal</div>
+            <h4>{details.name ? details.name.toUpperCase() : ''}</h4>
+            {details.alias && !details.form ? <ModalContent details={details} /> : null}
+            {details.form ? <ModalForm /> : null}
           </div>
         </div>
       </section>

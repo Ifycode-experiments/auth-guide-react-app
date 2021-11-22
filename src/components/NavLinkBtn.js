@@ -10,7 +10,8 @@ class NavLinkBtn extends Component {
     removeFocusOnHover: PropTypes.func,
     details: PropTypes.shape({
       alias: PropTypes.string,
-      name: PropTypes.string
+      name: PropTypes.string,
+      form: PropTypes.bool
     })
   }
 
