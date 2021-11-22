@@ -20,6 +20,7 @@ class App extends Component {
     // To determine which modal content to show
     this.setState({ modalPopup: modalDetails });
 
+    //prevent body scroll (when modal opens)
     this.bodyScrollAddOrRemove(this.state.modalVisible);
   }
 
@@ -36,6 +37,7 @@ class App extends Component {
     ------------------------------------------------*/
     this.headerRef.current.activePageLinkGetsFocus();
 
+    //Restore body scroll (when modal closes)
     this.bodyScrollAddOrRemove(this.state.modalVisible);
   }
 
