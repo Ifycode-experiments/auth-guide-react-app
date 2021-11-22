@@ -30,7 +30,7 @@ class Modal extends Component {
           <div className="modal-content">
             <h4>{details.name ? details.name.toUpperCase() : ''}</h4>
             {details.modal && !details.form ? <ModalContent details={details} /> : null}
-            {details.form ? <ModalForm /> : null}
+            {details.form ? <ModalForm details={details} /> : null}
           </div>
         </div>
       </section>

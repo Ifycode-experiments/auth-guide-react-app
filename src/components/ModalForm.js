@@ -1,26 +1,33 @@
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 
 class ModalForm extends Component {
   render() {
+    const details = this.props.details;
+    const info = details.formInfo;
     return (
-      <form id="signup-form">
+      <form id={info.formId}>
         <div className="input-field">
-          <input type="email" id="signup-email" placeholder=" " required />
-          <label htmlFor="signup-email">Email address</label>
+          <input type="email" id={info.input.emailId} placeholder=" " required />
+          <label htmlFor={info.input.emailId}>Email address</label>
         </div>
         <div className="input-field">
-          <input type="password" id="signup-password" placeholder=" " required />
-          <label htmlFor="signup-password">Choose password</label>
+          <input type="password" id={info.input.passwordId} placeholder=" " required />
+          <label htmlFor={info.input.passwordId}>{info.input.label}</label>
         </div>
-        <div className="input-field">
-          <input type="text" id="signup-name" placeholder=" " required />
-          <label htmlFor="signup-name">Display name</label>
-        </div>
-        <div className="input-field">
-          <input type="text" id="signup-bio" placeholder=" " required />
-          <label htmlFor="signup-bio">One line bio</label>
-        </div>
-        <button className="btn">Sign up</button>
+        {
+          details.modal === 'modal-signup' ?
+          <Fragment>
+            <div className="input-field">
+              <input type="text" id="signup-name" placeholder=" " required />
+              <label htmlFor="signup-name">Display name</label>
+            </div>
+            <div className="input-field">
+              <input type="text" id="signup-bio" placeholder=" " required />
+              <label htmlFor="signup-bio">One line bio</label>
+            </div>
+          </Fragment> : null
+        }
+        <button className="btn">{details.name}</button>
         <p className="error"></p>
       </form>
     );

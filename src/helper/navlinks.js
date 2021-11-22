@@ -39,12 +39,28 @@ const links = {
   login: {
     name: 'Login',
     modal: 'modal-login',
-    form: true
+    form: true,
+    formInfo: {
+      formId: 'login-form',
+      input: {
+        emailId: 'login-email',
+        passwordId: 'login-password',
+        label: 'Your password'
+      }
+    }
   },
   signup: {
     name: 'Sign Up',
     modal: 'modal-signup',
-    form: true
+    form: true,
+    formInfo: {
+      formId: 'signup-form',
+      input: {
+        emailId: 'signup-email',
+        passwordId: 'signup-password',
+        label: 'Create password'
+      }
+    }
   },
   help: {
     name: 'Show Help',
