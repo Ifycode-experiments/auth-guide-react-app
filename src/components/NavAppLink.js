@@ -66,6 +66,10 @@ class NavAppLink extends Component {
     return isActive ? 'a active' : 'a'
   };
 
+  closeNav = () => {
+    this.props.closeNav(true);
+  }
+
   /*-----------------------------------------------
   this.props.hoverOrFocus() collects true or false
   values to set the navLinkBtnActive state in parent
@@ -98,7 +102,7 @@ class NavAppLink extends Component {
     return (
       <li>
         <NavLink
-          onClick={this.props.closeNav} to={`/${this.props.details.name.toLowerCase()}`}
+          onClick={this.closeNav} to={`/${this.props.details.name.toLowerCase()}`}
           className={({isActive}) => this.activeOrNot(isActive)}
           onMouseEnter={this.mouseEnter}
           onMouseLeave={this.mouseLeave}

@@ -53,21 +53,25 @@ class Header extends Component {
     const currentNavState = this.state.navHidden;
     this.setState({ navHidden: !currentNavState });
 
-    //prevent and restore body scroll when nav opens or closes
-    document.body.classList.toggle('overflow-hidden');
+    //prevent and restore body scroll when nav opens or closes (ss)
+    if (this.state.navHidden) {
+      this.props.bodyScrollAddOrRemove(false);
+    } else {
+      this.props.bodyScrollAddOrRemove(true);
+    }
   }
 
-  closeNav = () => {
+  closeNav = (booleanValue) => {
     //close nav and show 1st menu btn (smaller screens)
     this.setState({ navHidden: true });
 
-    //remove class attr when nav is hidden
-    document.body.removeAttribute('class');
+    //prevent and restore body scroll when nav closes (ss)
+    this.props.bodyScrollAddOrRemove(booleanValue);
   }
 
   closeOnNavClick = (e) => {
     if (e.target === e.currentTarget) {
-      this.closeNav();
+      this.closeNav(true);
     }
   }
 
@@ -76,14 +80,14 @@ class Header extends Component {
     this.props.openModal(navlinkBtnDetails);
 
     //close nav (ss)
-    this.closeNav();
+    this.closeNav(false);
   }
 
   logout = () => {
     console.log('Logged Out! ');
 
     //close nav (ss)
-    this.closeNav();
+    this.closeNav(true);
   }
 
   hoverOrFocus = (boolenValue) => {

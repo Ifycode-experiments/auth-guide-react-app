@@ -20,8 +20,7 @@ class App extends Component {
     // To determine which modal content to show
     this.setState({ modalPopup: modalDetails });
 
-    //prevent body from scrolling when modal opens
-    document.body.classList.add('overflow-hidden');
+    this.bodyScrollAddOrRemove(this.state.modalVisible);
   }
 
   closeModal = (e) => {
@@ -31,15 +30,22 @@ class App extends Component {
     // Return modalPopup back to empty array
     this.setState({ modalPopup: {} });
 
-    //restore body content scroll & remove class attr
-    document.body.classList.remove('overflow-hidden');
-    document.body.removeAttribute('class');
-
     /*------------------------------------------------
     Call activePageLinkGetsFocus() found inside header
     when modal is closed - interesting!!!
     ------------------------------------------------*/
     this.headerRef.current.activePageLinkGetsFocus();
+
+    this.bodyScrollAddOrRemove(this.state.modalVisible);
+  }
+
+  bodyScrollAddOrRemove = (argIsFalse) => {
+    if (argIsFalse) {
+      document.body.classList.remove('overflow-hidden');
+      document.body.removeAttribute('class');
+    } else {
+      document.body.classList.add('overflow-hidden');
+    }
   }
 
   render() {
@@ -47,6 +53,7 @@ class App extends Component {
       <Fragment>
         <Header
           openModal={this.openModal}
+          bodyScrollAddOrRemove={this.bodyScrollAddOrRemove}
           ref={this.headerRef}
         />
         <Modal
