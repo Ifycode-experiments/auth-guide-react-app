@@ -41,11 +41,11 @@ class Header extends Component {
     function. Also made to work on page load with componentDidMount() {}
     ------------------------------------------------------------------------*/
     if (this.surfaceDocLinkRef.current.navAppLinkRef.current.ariaCurrent !== null) {
-      this.surfaceDocLinkRef.current.navAppLinkRef.current.focus();
+      this.surfaceDocLinkRef.current.navAppLinkRef.current.focus({preventScroll: true});
     }
 
     if (this.surfaceTutLinkRef.current.navAppLinkRef.current.ariaCurrent !== null) {
-      this.surfaceTutLinkRef.current.navAppLinkRef.current.focus();
+      this.surfaceTutLinkRef.current.navAppLinkRef.current.focus({preventScroll: true});
     }
   }
 

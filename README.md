@@ -23,3 +23,6 @@ Firebase authentication guide app with create-react-app. The guide helps to unde
 - React documentation [conditional rendering](https://reactjs.org/docs/conditional-rendering.html)
 - [Pluralsight - Return a Variable in the Render Function in React](https://www.pluralsight.com/guides/return-variable-in-render-function-in-react)
 - [Multiple css classes in react](https://programmingwithmosh.com/react/multiple-css-classes-react/)
+
+## Javascript resources
+- Fix for smaller screen nav scrolling back to top due to setting focus, found on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus) through [Preventing page from scrolling on focus switching](https://stackoverflow.com/questions/12758021/preventing-page-from-scrolling-on-focus-switching) stackoverflow question.
