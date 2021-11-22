@@ -52,11 +52,17 @@ class Header extends Component {
     //For hiding or showing nav element (and <NavBtn />)
     const currentNavState = this.state.navHidden;
     this.setState({ navHidden: !currentNavState });
+
+    //prevent and restore body scroll when nav opens or closes
+    document.body.classList.toggle('overflow-hidden');
   }
 
   closeNav = () => {
     //close nav and show 1st menu btn (smaller screens)
     this.setState({ navHidden: true });
+
+    //remove class attr when nav is hidden
+    document.body.removeAttribute('class');
   }
 
   closeOnNavClick = (e) => {
