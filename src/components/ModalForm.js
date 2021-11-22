@@ -1,5 +1,6 @@
 import { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import '../css/input-group.css';
 
 class ModalForm extends Component {
 

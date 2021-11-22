@@ -27,6 +27,11 @@ specific .btn style for specific sections
 }
 .modal .btn {
   margin-top: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+.modal .btn:hover,
+.modal .btn:focus {
+  transform: scale(1.05);
 }
 /*======================================*/
 @media screen and (min-width: 550px) {

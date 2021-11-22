@@ -1,11 +1,9 @@
 .hidden {
   display: none;
 }
-
 .overflow-hidden {
   overflow: hidden;
 }
-
 .show-block {
   display: block;
 }

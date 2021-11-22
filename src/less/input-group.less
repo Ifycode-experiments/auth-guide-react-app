@@ -1,0 +1,49 @@
+@import './var.less';
+
+.input-field {
+  position: relative;
+  margin:  0 0 10px 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid transparent;
+  border-bottom: 1px solid @white;
+  padding: 5px;
+  font-size: 1em;
+  color: @white;
+  background: transparent;
+  transition: border 0.1s linear,
+              transform 0.2s ease-in-out;
+
+  &:focus {
+    color: @yellow-dark;
+    border: 1px solid @yellow-dark;
+    background: @theme-dark;
+    border-radius: 3px;
+    outline: none;
+    transform: scale(1.01); /* modified */
+  }
+}
+
+textarea {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  color: @white;
+  cursor: text;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label,
+textarea:focus ~ label,
+textarea:not(:placeholder-shown) ~ label {
+z-index: -1;
+/* https://dev.to/piguicorn/labels-as-placeholders-labels-as-placeholders-10ei */
+}
