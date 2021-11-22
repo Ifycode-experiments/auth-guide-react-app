@@ -8,47 +8,47 @@
 const links = {
   documentation: {
     name: 'Documentation',
-    alias: null,
+    modal: null,
     form: null
   },
   tutorial: {
     name: 'Tutorial',
-    alias: null,
+    modal: null,
     form: null
   },
   /*blog: {
     name: 'Blog posts',
-    alias: null,
+    modal: null,
     form: null
   },*/
   account: {
     name: 'Account',
-    alias: 'modal-account',
+    modal: 'modal-account',
     form: false
   },
   logout: {
     name: 'Logout',
-    alias: null,
+    modal: null,
     form: null
   },
   /*create: {
     name: 'Create post',
-    alias: 'modal-create',
+    modal: 'modal-create',
     form: true
   },*/
   login: {
     name: 'Login',
-    alias: 'modal-login',
+    modal: 'modal-login',
     form: true
   },
   signup: {
     name: 'Sign Up',
-    alias: 'modal-signup',
+    modal: 'modal-signup',
     form: true
   },
   help: {
     name: 'Show Help',
-    alias: 'modal-help',
+    modal: 'modal-help',
     form: false
   }
 }

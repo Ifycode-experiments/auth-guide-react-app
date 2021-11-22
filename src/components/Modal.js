@@ -9,7 +9,7 @@ class Modal extends Component {
     closeModal: PropTypes.func,
     modalVisible: PropTypes.bool,
     details: PropTypes.shape({
-      alias: PropTypes.string,
+      modal: PropTypes.string,
       name: PropTypes.string,
       form: PropTypes.bool
     })
@@ -29,7 +29,7 @@ class Modal extends Component {
         <div className="modal">
           <div className="modal-content">
             <h4>{details.name ? details.name.toUpperCase() : ''}</h4>
-            {details.alias && !details.form ? <ModalContent details={details} /> : null}
+            {details.modal && !details.form ? <ModalContent details={details} /> : null}
             {details.form ? <ModalForm /> : null}
           </div>
         </div>

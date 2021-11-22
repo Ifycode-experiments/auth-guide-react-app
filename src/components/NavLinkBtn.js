@@ -9,7 +9,7 @@ class NavLinkBtn extends Component {
     openModal: PropTypes.func,
     removeFocusOnHover: PropTypes.func,
     details: PropTypes.shape({
-      alias: PropTypes.string,
+      modal: PropTypes.string,
       name: PropTypes.string,
       form: PropTypes.bool
     })

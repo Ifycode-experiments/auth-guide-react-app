@@ -12,8 +12,8 @@ class NavAppLink extends Component {
     navLinkBtnActive: PropTypes.bool,
     removeFocusOnHover: PropTypes.func,
     details: PropTypes.shape({
-      alias: PropTypes.string,
       name: PropTypes.string
+      //we don't need form or modal here
     })
   }
 
